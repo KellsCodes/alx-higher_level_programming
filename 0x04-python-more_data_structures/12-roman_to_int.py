@@ -13,14 +13,14 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return None
     i = 0
-    sum = 0
+    sum_total = 0
     while i < len(roman_string):
         current = roman_num[roman_string[i]]
         next_num = roman_num[roman_string[i + 1]] if i < len(roman_string) - 1 else 0
         if next_num > current:
-            sum += next_num - current
+            sum_total += next_num - current
             i += 2
         else:
-            sum += current
+            sum_total += current
             i += 1
-    return sum
+    return sum_total
