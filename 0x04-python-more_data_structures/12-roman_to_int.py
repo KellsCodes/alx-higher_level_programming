@@ -11,7 +11,7 @@ roman_num = {
         }
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
-        return None
+        return 0
     i = 0
     sum_total = 0
     while i < len(roman_string):
