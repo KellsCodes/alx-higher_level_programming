@@ -28,11 +28,11 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-    
+
     def area(self):
         """Returns the current area of the square"""
         return self.__size**2
-    
+
     def my_print(self):
         """prints the square in stdout with the character #"""
         if self.__size == 0:
@@ -42,5 +42,3 @@ class Square:
                 for horizontal in range(0, self.__size):
                     print("#", end="")
                 print()
-
-
