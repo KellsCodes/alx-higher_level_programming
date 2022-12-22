@@ -17,12 +17,12 @@ class Square:
         else:
             self.__size = size
 
-        if not isinstance(position, tuple):
+        if (not isinstance(position, tuple) or
+                len(position) != 2 or
+                not all(isinstance(num, int) for num in position) or
+                not all(num >= 0 for num in position)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(position) > 2 or position[0] < 0 or position[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+        self.__position = position
 
     @property
     def size(self):
@@ -47,13 +47,12 @@ class Square:
     @position.setter
     def position(self, value):
         "Resets the position of the square"
-        if not isinstance(value, tuple):
-            print("who........................................")
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) > 2 or value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def my_print(self):
         """Prints in stdout the square with character of #"""
