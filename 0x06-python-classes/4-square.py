@@ -10,7 +10,12 @@ class Square:
         Initializing the class instance
         Args: size(int) size of square
         """
-        self.size = size
+        if type(size) is not int:
+            raise TypeError("size must be an interger")
+        elif size < 0:
+            raise TypeError("size must be >= 0")
+        else:
+            self.__size = size
 
     @property
     def size(self):
@@ -20,14 +25,14 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, value):
+    def size(self, size):
         """Sets the size of square, must be an integer"""
-        if type(value) is not int:
-            raise TypeError("size must be an interger")
-        elif value < 0:
-            raise TypeError("size must be >= 0")
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.__size = size
 
     def area(self):
         """Returns the area of the square"""
