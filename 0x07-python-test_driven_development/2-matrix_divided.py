@@ -41,6 +41,8 @@ def matrix_divided(matrix, div):
                     "Each row of the matrix must have the same size")
             new_list = []
             for value in matrix_list:
+                if not type(value) in (int, float):
+                    raise TypeError(type_msg)
                 new_list.append(round((value / div), 2))
             new_matrix.append(new_list)
 
