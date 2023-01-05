@@ -31,19 +31,19 @@ def matrix_divided(matrix, div):
                 type(matrix[0]) is not list):
             raise TypeError(type_msg)
         new_matrix = []
-        matrix_len = len(matrix[0])
+        matrix_len = 0
 
         for matrix_list in matrix:
             if type(matrix_list) is not list:
                 raise TypeError(type_msg)
-            if len(matrix_list) != matrix_len:
+            if matrix_len != 0 and len(matrix_list) != matrix_len:
                 raise TypeError(
                     "Each row of the matrix must have the same size")
             new_list = []
+            matrix_len = len(matrix_list)
             for value in matrix_list:
                 if not type(value) in (int, float):
                     raise TypeError(type_msg)
                 new_list.append(round((value / div), 2))
             new_matrix.append(new_list)
-
         return new_matrix
