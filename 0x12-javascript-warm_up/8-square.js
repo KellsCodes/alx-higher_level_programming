@@ -7,7 +7,7 @@ if (isNaN(Number(_args[0]))) {
   while (i < Number(_args[0])) {
     let chars = '';
     while (j < Number(_args[0])) {
-      chars += 'x';
+      chars += 'X';
       j++;
     }
     console.log(chars);
